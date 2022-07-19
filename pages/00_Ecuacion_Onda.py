@@ -1,4 +1,7 @@
 import streamlit as st
+st.set_page_config(layout="wide", page_title="BBVA Ecuacion de Onda", 
+                    page_icon="💥", initial_sidebar_state="expanded")
+
 import numpy as np
 from matplotlib import pyplot as plt
 
@@ -7,9 +10,10 @@ def phi(x):
 
 # The controls
 st.title("Ecuacion de onda")
-c1, c2 = st.columns(2)
-v = c1.slider("v", min_value=-2.0, max_value=2.0, value=1.0, step=0.1)
-dt = c2.slider("Δt", min_value=-1.0, max_value=1.0, value=0.0, step=0.1)
+st.caption("Parámetros pueden modificarse en menu lateral izquierdo")
+st.sidebar.title("Parámetros")
+v = st.sidebar.slider("velocidad: v (m/s)", min_value=-3.0, max_value=3.0, value=1.0, step=0.1)
+dt = st.sidebar.slider("intervalo temporal: Δt (s)", min_value=-3.0, max_value=3.0, value=1.0, step=0.1)
 
 # The image
 x = np.arange(-10, 10, 0.01)
