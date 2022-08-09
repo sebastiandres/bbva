@@ -18,8 +18,8 @@ dt = st.sidebar.slider("intervalo temporal: Δt (s)", min_value=-3.0, max_value=
 # The image
 x = np.arange(-10, 10, 0.01)
 fig = plt.figure(figsize=(10, 5))
-plt.plot(x, phi(x), 'b', label='$u(x,t) = \Phi(x - v t)$')
-plt.plot(x, phi(x-v*dt), 'r--', label='$u(x, t + \Delta t) = \Phi(x - v t - v\Delta t)$')
+plt.plot(x, phi(x), 'b', label='$u(t, x) = \Phi(x - v t)$')
+plt.plot(x, phi(x-v*dt), 'r--', label='$u(t + \Delta t, x) = \Phi(x - v t - v\Delta t)$')
 plt.xlabel("x")
 plt.ylabel("y")
 plt.title("Ecuación de onda")
